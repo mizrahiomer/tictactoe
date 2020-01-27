@@ -1,20 +1,28 @@
 {
   "name": "tictactoe",
+  "homepage": "http://mizrahiomer.github.io/tictactoe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-reveal": "^1.2.2",
+    "react-scripts": "3.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

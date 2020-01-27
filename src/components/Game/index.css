@@ -1,0 +1,53 @@
+.board {
+  display: grid;
+  padding-top: 2em;
+  justify-content: center;
+  grid-template-columns: repeat(3, 10em);
+  grid-template-rows: repeat(3, 10em);
+}
+.select-symbol {
+  text-align: center;
+  font-weight: 600;
+  font-size: 3em;
+  padding: 2.2em 0;
+}
+.symbol {
+  background: rgb(194, 194, 194);
+  display: inline-block;
+  font-size: 3em;
+  padding: 0.05em 0.3em;
+  margin: 0.3em;
+  border-radius: 0.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.symbol:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+  transition: all ease 500ms;
+}
+.title {
+  justify-content: center;
+  text-align: center;
+  padding-top: 0.5em;
+  font-weight: 600;
+  font-size: 3em;
+}
+.game-info {
+  font-size: 2em;
+  font-weight: 500;
+  padding-bottom: 0.5em;
+}
+.icon {
+  display: inline;
+}
+.options {
+  padding: 1em;
+  text-align: center;
+}
+@media (max-width: 567px) {
+  .board {
+    grid-template-columns: repeat(3, 6em);
+    grid-template-rows: repeat(3, 6em);
+  }
+}
