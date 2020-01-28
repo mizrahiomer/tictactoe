@@ -1,9 +1,8 @@
 .board {
   display: grid;
-  padding-top: 2em;
   justify-content: center;
-  grid-template-columns: repeat(3, 10em);
-  grid-template-rows: repeat(3, 10em);
+  grid-template-columns: repeat(3, 9em);
+  grid-template-rows: repeat(3, 9em);
 }
 .select-symbol {
   text-align: center;
@@ -12,7 +11,8 @@
   padding: 2.2em 0;
 }
 .symbol {
-  background: rgb(194, 194, 194);
+  background: transparent;
+  border: 1px solid white;
   display: inline-block;
   font-size: 3em;
   padding: 0.05em 0.3em;
@@ -22,24 +22,45 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .symbol:hover {
+  border: none;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
   transform: scale(1.1);
   transition: all ease 500ms;
 }
 .title {
+  margin: auto;
+  width: fit-content;
+  border-radius: 0.5em;
   justify-content: center;
   text-align: center;
-  padding-top: 0.5em;
-  font-weight: 600;
-  font-size: 3em;
+  padding: 1em;
+  font-weight: 500;
+  font-size: 2em;
 }
 .game-info {
   font-size: 2em;
   font-weight: 500;
-  padding-bottom: 0.5em;
+  padding: 0.5em;
+}
+.btn {
+  padding: 0.4em 1em;
+  border-radius: 0.5em;
+  border: 1px solid;
+  color: white;
+  font-family: inherit;
+  font-size: 2em;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+}
+.btn:hover {
+  background: white;
+  color: rgb(47, 209, 174);
 }
 .icon {
   display: inline;
+  font-family: 'Bebas Neue', cursive;
+  cursor: pointer;
 }
 .options {
   padding: 1em;
@@ -47,7 +68,7 @@
 }
 @media (max-width: 567px) {
   .board {
-    grid-template-columns: repeat(3, 6em);
-    grid-template-rows: repeat(3, 6em);
+    grid-template-columns: repeat(3, 7em);
+    grid-template-rows: repeat(3, 7em);
   }
 }

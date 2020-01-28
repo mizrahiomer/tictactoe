@@ -27,8 +27,6 @@ const Sqaure = ({ onClick, value, hoverValue, winningLane, index }) => {
       }}
     >
       {value}
-      {console.log('hovervalue ' + hoverValue)}
-      {console.log(isHovered)}
       {isHovered && !value && !winningLane ? hoverValue : null}
     </div>
   );
