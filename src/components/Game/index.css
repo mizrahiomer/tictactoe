@@ -14,7 +14,7 @@
   background: transparent;
   border: 1px solid white;
   display: inline-block;
-  font-size: 3em;
+  font-size: 2em;
   padding: 0.05em 0.3em;
   margin: 0.3em;
   border-radius: 0.1em;
@@ -33,17 +33,17 @@
   border-radius: 0.5em;
   justify-content: center;
   text-align: center;
-  padding: 1em;
+  padding: 0.8em;
   font-weight: 500;
   font-size: 2em;
 }
 .game-info {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: 500;
   padding: 0.5em;
 }
 .btn {
-  padding: 0.4em 1em;
+  padding: 0.3em 1em;
   border-radius: 0.5em;
   border: 1px solid;
   color: white;
@@ -63,8 +63,8 @@
   cursor: pointer;
 }
 .options {
-  padding: 1em;
   text-align: center;
+  margin: 0.5em;
 }
 @media (max-width: 567px) {
   .board {
