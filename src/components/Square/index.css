@@ -1,53 +1,61 @@
 .square {
-  border: 1px solid rgb(194, 194, 194);
-  background: rgb(252, 249, 249);
+  border: 0.03em solid #434e52;
+  margin: 2px;
+  color: transparent;
+  background: #f3f3e7;
+  opacity: 0.9;
   display: flex;
-  font-size: 7em;
-  border-radius: 0.1em;
+  font-size: 8em;
+  border-radius: 0.15em;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .square:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: white;
+  opacity: 1;
 }
 .x {
-  background: rgb(206, 66, 66);
-  color: whitesmoke;
+  background: #e6493e;
+  color: #f3f3e7;
 }
 .x:hover {
-  background: rgb(192, 32, 32);
+  background: #d83b2f;
 }
 .x-placeholder {
-  color: rgb(206, 66, 66);
+  color: #e6493e;
 }
 .o {
-  background: rgb(247, 145, 51);
-  color: whitesmoke;
+  background: #29c97e;
+  color: #f3f3e7;
 }
 .o:hover {
-  background: rgb(231, 134, 7);
+  background: #26b472;
 }
 .o-placeholder {
-  color: rgb(247, 145, 51);
+  color: #29c97e;
 }
 .highlight {
   animation: pulse 1.5s infinite;
   animation-timing-function: linear;
-  background: rgb(252, 207, 59);
+  background: #f0cd74;
 }
 .highlight:hover {
-  background: rgb(252, 207, 26);
+  background: #f0cd74;
 }
 @keyframes pulse {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
+  }
+}
+@media (max-width: 567px) {
+  .square {
+    font-size: 6em;
   }
 }

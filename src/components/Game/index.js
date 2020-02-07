@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Fade from 'react-reveal/Fade';
 import Tada from 'react-reveal/Tada';
 import Pulse from 'react-reveal/Pulse';
 import ReactTooltip from 'react-tooltip';
+import Confetti from 'react-dom-confetti';
 import Square from '../Square';
 import axios from '../axios-instance';
 import './index.css';
-import { Icon } from 'semantic-ui-react';
 
 const Game = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -19,6 +19,7 @@ const Game = () => {
   useEffect(() => {
     fetchResults();
   });
+
   const calculateWinner = squares => {
     const possibleLines = [
       [0, 1, 2],
@@ -64,9 +65,9 @@ const Game = () => {
     setIsXNext(true);
     setwinningLane(null);
     setIsDraw(false);
-    if (isBoardFull(squares) || isWinner) {
-      setUserSymbol(null);
-    }
+    // if (isBoardFull(squares) || isWinner) {
+    //   setUserSymbol(null);
+    // }
   };
 
   const getStatus = () => {
@@ -78,7 +79,7 @@ const Game = () => {
       return (
         <Tada>
           <p>
-            <Icon className='winner yellow' /> The winner is {isWinner.winner}
+            <i className='fas fa-trophy' /> The winner is: {isWinner.winner}
           </p>
         </Tada>
       );
@@ -92,7 +93,7 @@ const Game = () => {
         </Pulse>
       );
     } else {
-      return 'Next player: ' + nextSymbol;
+      return <p>Next player: {nextSymbol}</p>;
     }
   };
   const selectSquare = i => {
@@ -133,11 +134,41 @@ const Game = () => {
       console.log(e);
     }
   };
+  const rightConfig = {
+    angle: 60,
+    spread: 45,
+    startVelocity: 40,
+    elementCount: 300,
+    dragFriction: 0.1,
+    duration: 2000,
+    width: '1.5em',
+    height: '1.5em',
+    colors: [
+      '#f0cd74',
+      '#f3f3e7',
+      isWinner !== null ? (isWinner.winner === 'X' ? '#e6493e' : '#26b472') : ''
+    ]
+  };
+  const leftConfig = {
+    angle: 120,
+    spread: 45,
+    startVelocity: 40,
+    elementCount: 300,
+    dragFriction: 0.1,
+    duration: 2000,
+    width: '1.5em',
+    height: '1.5em',
+    colors: [
+      '#f0cd74',
+      '#f3f3e7',
+      isWinner !== null ? (isWinner.winner === 'X' ? '#e6493e' : '#26b472') : ''
+    ]
+  };
 
   return !userSymbol ? (
     <Fade bottom>
       <div className='select-symbol'>
-        <p>Choose your player</p>
+        <p className='select-symbol-title'>Choose your player</p>
         <p
           className='symbol x'
           onClick={() => {
@@ -159,23 +190,19 @@ const Game = () => {
       </div>
     </Fade>
   ) : (
-    <div>
+    <Fragment>
       <Fade top>
         <Fade left>
           <div className='title'>
-            X: {results.X}| O: {results.O}| Draw: {results.draw}{' '}
-            <Icon
+            <span className='x-placeholder'>X</span>:{results.X}|
+            <span className='o-placeholder'>O</span>: {results.O}|
+            <span>Draw: {results.draw}</span>
+            <i
               onClick={() => deleteAllResults()}
-              className={'trash'}
+              className='fa fa-trash deleteBtn'
               data-tip='Delete results history'
-            ></Icon>
-            <ReactTooltip
-              place='right'
-              type='light'
-              afterShow={() => {
-                setTimeout(ReactTooltip.hide, 8000);
-              }}
-            />
+            ></i>
+            <ReactTooltip place='right' />
           </div>
         </Fade>
         <div className='board'>
@@ -193,6 +220,12 @@ const Game = () => {
               />
             );
           })}
+          <div className='right-confetti-wrapper'>
+            <Confetti active={isWinner !== null} config={rightConfig} />
+          </div>
+          <div className='left-confetti-wrapper'>
+            <Confetti active={isWinner !== null} config={leftConfig} />
+          </div>
         </div>
       </Fade>
       <Fade right>
@@ -205,7 +238,7 @@ const Game = () => {
           )}
         </div>
       </Fade>
-    </div>
+    </Fragment>
   );
 };
 export default Game;

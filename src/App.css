@@ -1,11 +1,11 @@
 .app {
-  background-image: linear-gradient(
-    to top right,
-    rgb(40, 165, 182),
-    rgb(64, 207, 64)
-  );
-  height: 100vh;
-  color: whitesmoke;
+  color: #434e52;
+  min-height: 100vh;
+  background: url('./assets/bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Bebas Neue', cursive;
   letter-spacing: 0.1em;
+  cursor: default;
 }

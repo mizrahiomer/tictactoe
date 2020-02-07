@@ -3,72 +3,111 @@
   justify-content: center;
   grid-template-columns: repeat(3, 9em);
   grid-template-rows: repeat(3, 9em);
+  margin-bottom: 0.3em;
 }
 .select-symbol {
   text-align: center;
   font-weight: 600;
   font-size: 3em;
-  padding: 2.2em 0;
+}
+.select-symbol-title {
+  font-size: 2em;
+  padding-top: 0.5em;
+  font-weight: 550;
+  margin: 0;
 }
 .symbol {
-  background: transparent;
-  border: 1px solid white;
   display: inline-block;
-  font-size: 2em;
-  padding: 0.05em 0.3em;
+  border: 0.05em solid #f3f3e7;
+  padding: 0 0.5em;
+  font-size: 3.5em;
   margin: 0.3em;
   border-radius: 0.1em;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 5px 15px rgb(95, 93, 93);
 }
 .symbol:hover {
-  border: none;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 10px 30px rgb(95, 93, 93);
   transform: scale(1.1);
   transition: all ease 500ms;
 }
 .title {
-  margin: auto;
-  width: fit-content;
-  border-radius: 0.5em;
   justify-content: center;
   text-align: center;
-  padding: 0.8em;
+  padding: 0.5em 0 0.3em 0;
   font-weight: 500;
-  font-size: 2em;
+  font-size: 2.7em;
+}
+.right-confetti-wrapper {
+  margin-left: 0;
+}
+.left-confetti-wrapper {
+  margin-left: 18em;
+}
+.options {
+  text-align: center;
+  justify-content: center;
 }
 .game-info {
   font-size: 2.5em;
   font-weight: 500;
-  padding: 0.5em;
+  /* margin-bottom: 0.4em; */
 }
 .btn {
-  padding: 0.3em 1em;
+  padding: 0.3em 0.6em;
   border-radius: 0.5em;
-  border: 1px solid;
-  color: white;
+  border: 0.15em solid #434e52;
   font-family: inherit;
+  color: inherit;
   font-size: 2em;
+  display: inline;
   cursor: pointer;
   background: transparent;
-  color: white;
+  outline: none;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .btn:hover {
-  background: white;
-  color: rgb(47, 209, 174);
+  background: #434e52;
+  color: #f3f3e7;
+  transform: scale(1.05);
+  animation: topBubbles ease-in-out 0.75s forwards;
 }
-.icon {
-  display: inline;
-  font-family: 'Bebas Neue', cursive;
+
+.deleteBtn {
   cursor: pointer;
+  padding-left: 0.6em;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.options {
-  text-align: center;
-  margin: 0.5em;
+.deleteBtn:hover {
+  transform: scale(1.1);
 }
+.fas.fa-trophy {
+  color: #f0bc3a;
+  outline: none;
+}
+
 @media (max-width: 567px) {
   .board {
     grid-template-columns: repeat(3, 7em);
     grid-template-rows: repeat(3, 7em);
+    padding-bottom: 1em;
+  }
+  .symbol {
+    font-size: 2em;
+  }
+  .select-symbol-title {
+    font-size: 1.1em;
+    padding-top: 4.5em;
+  }
+  .title {
+    padding: 2em 0 1em 0;
+  }
+  .btn {
+    margin-top: 0.5em;
+  }
+  .right-confetti-wrapper {
+    margin-left: -7em;
   }
 }
