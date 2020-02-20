@@ -54,7 +54,7 @@
     transform: scale(1);
   }
 }
-@media (max-width: 567px) {
+@media (max-width: 600px) {
   .square {
     font-size: 6em;
   }

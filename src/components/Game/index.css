@@ -52,7 +52,6 @@
 .game-info {
   font-size: 2.5em;
   font-weight: 500;
-  /* margin-bottom: 0.4em; */
 }
 .btn {
   padding: 0.3em 0.6em;
@@ -88,10 +87,10 @@
   outline: none;
 }
 
-@media (max-width: 567px) {
+@media (max-width: 600px) {
   .board {
-    grid-template-columns: repeat(3, 7em);
-    grid-template-rows: repeat(3, 7em);
+    grid-template-columns: repeat(3, 6em);
+    grid-template-rows: repeat(3, 6em);
     padding-bottom: 1em;
   }
   .symbol {
