@@ -1,4 +1,4 @@
-# React Todo App
+# React Tic Tac Toe
 
 Tic tac toe app built using React and React Hooks, play the classic tic tac toe game with a modern design and cool effects!. The results history is saved to firebase Realtime Database. The app is adapted for large screen size as well as for mobile screen size
 
